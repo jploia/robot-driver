@@ -6,7 +6,7 @@ A Python program that can automatically perform a task on a website.
 Create a virtual environment to install the following packages.
 If you do not have a virtual environment for python3 installed and are on a Debian/Ubuntu based system:
 ```
-apt install python3,13-venv
+apt install python3.13-venv
 ```
 
 Go into the directory of the file you would like to create your virtual environment in. This should be '../backend'.
