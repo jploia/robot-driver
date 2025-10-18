@@ -19,6 +19,13 @@ Run the following to make the needed files:
 python -m venv .
 ```
 
+#### On Linux Systems
+Activate your virtual environment:
+```
+source bin/activate
+```
+
+#### On Windows Systems
 Change to the Scripts directory:
 ```
 cd Scripts
@@ -26,8 +33,9 @@ cd Scripts
 
 Activate your virtual environment:
 ```
-source bin/activate
+activate
 ```
+
 
 ### Pip
 If you do not have pip installed:
