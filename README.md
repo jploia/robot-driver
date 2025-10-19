@@ -1,6 +1,5 @@
 # Robot Driver
 A Python program that can automatically perform a task on a website.
-**NOTE: Playwright, a required package for this application, is NOT supported on Debian/Ubuntu systems**
 
 ## Getting Started
 ### Virtual Environment 
@@ -46,9 +45,8 @@ sudo apt install python3-pip
 
 To install Playwrite:
 ```
-pip3 install --upgrade pip
-pip3 install playwright
-playwright install
+pip install --upgrade pip
+python -m playwright install
 ```
 
 Alternatively, if you are running into upgrade issues:
@@ -58,6 +56,7 @@ python.exe -m pip install --upgrade pip
 
 ## Credits
 The details for the installation were compiled from the following sources. Thank you.
-* https://playwright.dev/python/docs/library
 * https://ics.uci.edu/~thornton/ics32/Notes/ThirdPartyLibraries/
+* https://playwright.dev/python/docs/library
+* https://thunderbit.com/blog/playwright-python-tutorial
 
