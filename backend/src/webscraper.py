@@ -22,7 +22,12 @@ def search_item(url: str, query: str) -> str:
 
         # conduct search
         # search bar ID: id="nav-search-bar-form"
-        page.get_by_role("nav-search-bar-form").dispatch_event('click')
+        # page.locator('twotabsearchtextbox').press('Enter')
+        # page.get_by_role("text").press('h')
+        page.get_by_role("searchbox").click()
+        # page.get_by_role("twotabsearchtextbox").dispatch_event('click')
+        
+        # page.locator('#nav-search-bar-form').press_sequentially('banana')
         
         print('yay')
 
