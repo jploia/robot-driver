@@ -12,6 +12,9 @@ class TestWebscrapperMethods(unittest.TestCase):
         output = output.getvalue()
         self.assertEqual(output, 'The page, Amazon.com, has successfully been opened.\n')
 
+    def test_nonvalid_url_raises_exception(self):
+        with self.assertRaises(Exception):
+            webscraper.open_page(f'https://www.asjmazon.coon')    
         
 
 
