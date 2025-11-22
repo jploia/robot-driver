@@ -1,5 +1,6 @@
 # this will include the code for the webscraper
 from playwright.sync_api import sync_playwright, expect
+from urllib.parse import urlparse
 
 # primary function containing the functionality of the program
 def search_item(url: str, query: str) -> str:
@@ -17,19 +18,34 @@ def search_item(url: str, query: str) -> str:
 
         print(f'The page, {page.title()}, has successfully been opened.')
     
-        # bypass continue shopping button
-        page.get_by_role("button").click()
+       # bypass continue shopping button
+        page.get_by_role('button').click()
+            # set timeout after TimeoutError
 
         # conduct search
-        # search bar ID: id="nav-search-bar-form"
-        # page.locator('twotabsearchtextbox').press('Enter')
-        # page.get_by_role("text").press('h')
-        page.get_by_role("searchbox").click()
-        # page.get_by_role("twotabsearchtextbox").dispatch_event('click')
+        page.get_by_role('searchbox').click()
+        page.keyboard.type(query, delay=100) # to mimic user typing
+        page.keyboard.press('Enter', delay=100)
+
+        # click first search result
+        page.get_by_role('link').click()
         
-        # page.locator('#nav-search-bar-form').press_sequentially('banana')
-        
-        print('yay')
+        page.get_by_role('searchbox').click()
+
+        page.keyboard.type(query, delay=100) # to mimic user typing
+        # wait for results page
+        # request = page.on('request')
+        # request.all_headers()
+        # with page.expect_request('*') as search:
+            
+        #     page.goto('https://wikipedia.org')
+        # print(search.value.url)
+
+        # scrape the data from the first page of results
+
+        # results page
+        print('Success!')
+
 
         # close browser
         browser.close()
